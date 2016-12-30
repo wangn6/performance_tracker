@@ -1,0 +1,43 @@
+group 'com.blackboard'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile 'org.apache.logging.log4j:log4j-api:2.7'
+    compile 'org.apache.logging.log4j:log4j-core:2.7'
+    compile 'org.elasticsearch.client:transport:5.1.1'
+    //compile 'org.apache.jmeter:ApacheJMeter_core:3.0'
+    //compile 'org.apache.jmeter:ApacheJMeter_components:3.0'
+    compile 'org.apache.jmeter:jorphan:3.0'
+    compile files("/Users/nwang/servers/apache-jmeter-3.0-server/lib/ext/ApacheJMeter_components.jar")
+    compile files("/Users/nwang/servers/apache-jmeter-3.0-server/lib/ext/ApacheJMeter_core.jar")
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
+    }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+shadowJar {
+  zip64 true
+
+}
