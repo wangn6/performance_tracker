@@ -1,5 +1,10 @@
 This project support to store the JMeter support result to the ElasticSearch and then we can use the Kibana to visualize the result of performance.
 
+It has been verified on the JMeter 3.0 server version and the ElasticSearch 5.1
+
+If you need to support other version of JMeter or ElasticSearch, you may need to update the reference dependency in the build.gradle file, and you may need to change the code because the SDK for the ElasticSearch transport client may be different.
+
+
 To use it:
 1. Using IDEA to open the project, by New-> Project From Existing Sourses
 2. Then specify the build.gradle to import the project
