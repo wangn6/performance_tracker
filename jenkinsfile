@@ -1,0 +1,6 @@
+#!groovy
+stage("build"){
+    node{
+    echo "building"
+    }
+}
