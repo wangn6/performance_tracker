@@ -1,4 +1,4 @@
-@!groovy
+#!groovy
 stage("build"){
     node{
     echo "Building"
